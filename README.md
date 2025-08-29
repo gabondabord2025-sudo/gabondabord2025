@@ -4,7 +4,7 @@
 **https://gabondabord2025.vercel.app/**
 
 ## Description
-Site web professionnel de pétition pour le boycott des marchandises béninoises et camerounaises, créé pour défendre la dignité du Gabon.
+Site web professionnel de pétition pour le boycott des marchandises béninoises et camerounaises, créé pour défendre la dignité du Gabon face à cette déferlante de haine dont nous avons été victime après que notre Héroïne TATA BERTILLE soit allé défendre avec vigueur et beaucouop d'émotions nos mamans GABONAISES, des mamans qui méritent d'être prioritaires dans leur marché.
 
 ## ✅ Fonctionnalités implémentées
 - ✅ **Texte de la pétition**
@@ -40,7 +40,7 @@ src/
 │   ├── SignatureList.tsx
 │   └── SocialShare.tsx
 ├── data/               # Données de la pétition
-│   └── petitionContent.ts  # Texte EXACT original
+│   └── petitionContent.ts  # Texte PETITION
 ├── hooks/              # Hooks personnalisés
 │   └── useSignatures.ts
 ├── lib/                # Utilitaires
@@ -62,4 +62,4 @@ public/images/          # Assets graphiques
 - **Email de signalement**: gabondabord2025@gmail.com
 ---
 
-**Développé par MiniMax Agent - Toutes les corrections ont été appliquées conformément aux exigences.**
+**Développé AVEC AMOUR PAR DES GABONAIS QUI ADORENT LEUR PAYS -  2025 Gabon d'abord - Tous droits réservés.**
