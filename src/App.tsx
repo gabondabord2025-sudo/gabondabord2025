@@ -1,0 +1,278 @@
+import { useState, useEffect } from 'react'
+import { Logo } from '@/components/Logo'
+import { SignatureForm } from '@/components/SignatureForm'
+import { SignatureCounter } from '@/components/SignatureCounter'
+import { SignatureList } from '@/components/SignatureList'
+import { SocialShare } from '@/components/SocialShare'
+import { useSignatures } from '@/hooks/useSignatures'
+import { PETITION_CONTENT } from '@/data/petitionContent'
+
+function App() {
+  const { signatureCount, isLoading, refreshData } = useSignatures()
+  const [showFullPetition, setShowFullPetition] = useState(false)
+
+  const handleSignatureAdded = () => {
+    refreshData()
+  }
+
+  const scrollToSignature = () => {
+    document.getElementById('signature-form')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    })
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-yellow-50">
+      {/* Header avec fond blanc et logo agrandi */}
+      <header className="bg-white shadow-lg border-b-4 border-emerald-800">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col items-center">
+            {/* Logo principal agrandi */}
+            <Logo size="xlarge" variant="with-subtitle" className="mb-6" />
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-emerald-700 to-emerald-800 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+            {PETITION_CONTENT.title}
+          </h1>
+          
+          <div className="max-w-4xl mx-auto mb-8">
+            <p className="text-emerald-100 text-lg leading-relaxed whitespace-pre-line">
+              {PETITION_CONTENT.introduction}
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={scrollToSignature}
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-emerald-900 font-bold py-4 px-8 rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105"
+            >
+              SIGNER MAINTENANT
+            </button>
+            
+            <button
+              onClick={() => setShowFullPetition(!showFullPetition)}
+              className="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-emerald-900 font-semibold py-4 px-8 rounded-lg transition-all duration-200"
+            >
+              {showFullPetition ? 'MASQUER LE TEXTE' : 'LIRE LE TEXTE COMPLET'}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Citations Section */}
+      <section className="bg-gradient-to-r from-yellow-100 to-emerald-100 py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Citation Principale */}
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-emerald-600">
+              <blockquote className="text-emerald-800 text-lg font-medium italic mb-3">
+                "{PETITION_CONTENT.citations.principale.texte}"
+              </blockquote>
+              <cite className="text-emerald-600 font-semibold">
+                — {PETITION_CONTENT.citations.principale.auteur}
+              </cite>
+            </div>
+            
+            {/* Citation Anti-Passivité */}
+            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-yellow-600">
+              <blockquote className="text-emerald-800 text-lg font-medium italic mb-3">
+                "{PETITION_CONTENT.citations.antiPassivite.texte}"
+              </blockquote>
+              <cite className="text-emerald-600 font-semibold">
+                — {PETITION_CONTENT.citations.antiPassivite.auteur}
+              </cite>
+            </div>
+          </div>
+          
+          {/* Citation Africaine Centrée */}
+          <div className="mt-6 max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-emerald-800 to-emerald-700 rounded-lg shadow-lg p-6 text-white text-center">
+              <blockquote className="text-yellow-100 text-xl font-medium italic mb-4">
+                "{PETITION_CONTENT.citations.africaine.texte}"
+              </blockquote>
+              <cite className="text-yellow-300 font-bold text-lg">
+                — {PETITION_CONTENT.citations.africaine.auteur}
+              </cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-8">
+        {/* Signature Counter */}
+        <div className="mb-8">
+          <SignatureCounter count={signatureCount} isLoading={isLoading} />
+        </div>
+
+        {/* Bandeau avec image identité */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-emerald-100 to-yellow-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-2/3 mb-4 md:mb-0">
+              <h3 className="text-xl font-bold text-emerald-800 mb-2">
+                Justice et Identité Culturelle Gabonaise
+              </h3>
+              <p className="text-emerald-700">
+                Notre pétition s'appuie sur les valeurs fondamentales de justice et de respect 
+                de l'identité culturelle gabonaise. Ensemble, défendons notre dignité nationale.
+              </p>
+            </div>
+            <div className="md:w-1/3 flex justify-center">
+              <img 
+                src="/images/Image_3.jpeg" 
+                alt="Justice et Identité Culturelle" 
+                className="w-32 h-32 object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Full Petition Content */}
+        {showFullPetition && (
+          <div className="mb-8">
+            <div className="bg-white rounded-lg shadow-lg border border-emerald-200 p-6 md:p-8">
+              <div className="prose prose-emerald max-w-none">
+                {/* Les faits */}
+                <section className="mb-8">
+                  <h2 className="text-2xl font-bold text-emerald-800 mb-4">
+                    {PETITION_CONTENT.facts.title}
+                  </h2>
+                  {PETITION_CONTENT.facts.items.map((fact, index) => (
+                    <div key={index} className="mb-4">
+                      <h3 className="text-lg font-semibold text-emerald-700 mb-2">
+                        {fact.title}
+                      </h3>
+                      <p className="text-emerald-600 leading-relaxed">
+                        {fact.content}
+                      </p>
+                    </div>
+                  ))}
+                </section>
+
+                {/* Notre réponse */}
+                <section className="mb-8">
+                  <h2 className="text-2xl font-bold text-emerald-800 mb-4">
+                    {PETITION_CONTENT.response.title}
+                  </h2>
+                  {PETITION_CONTENT.response.content.map((paragraph, index) => (
+                    <p key={index} className="text-emerald-600 leading-relaxed mb-4 font-medium">
+                      {paragraph}
+                    </p>
+                  ))}
+                  <ul className="list-disc list-inside text-emerald-600 space-y-2 ml-4">
+                    {PETITION_CONTENT.response.actions.map((action, index) => (
+                      <li key={index}>{action}</li>
+                    ))}
+                  </ul>
+                </section>
+
+                {/* Nos exigences */}
+                <section className="mb-8">
+                  <h2 className="text-2xl font-bold text-emerald-800 mb-4">
+                    {PETITION_CONTENT.demands.title}
+                  </h2>
+                  <ul className="list-disc list-inside text-emerald-600 space-y-3 ml-4">
+                    {PETITION_CONTENT.demands.items.map((demand, index) => (
+                      <li key={index} className="leading-relaxed">{demand}</li>
+                    ))}
+                  </ul>
+                </section>
+
+                {/* Notre message */}
+                <section className="mb-8">
+                  <h2 className="text-2xl font-bold text-emerald-800 mb-4">
+                    {PETITION_CONTENT.message.title}
+                  </h2>
+                  {PETITION_CONTENT.message.content.map((paragraph, index) => (
+                    <p key={index} className="text-emerald-600 leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
+                </section>
+
+                {/* Hashtags */}
+                <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                  <p className="text-emerald-700 font-semibold mb-2">Hashtags :</p>
+                  <p className="text-emerald-600 font-mono text-lg">
+                    {PETITION_CONTENT.hashtags.join(' ')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Formulaire de signature avec image intégrée */}
+          <div id="signature-form" className="relative">
+            {/* Image décorative près du formulaire */}
+            <div className="absolute -top-6 -right-6 hidden lg:block z-10">
+              <div className="bg-white rounded-full p-3 shadow-lg border-4 border-yellow-400">
+                <img 
+                  src="/images/Image_5.jpeg" 
+                  alt="Symbole Gabon d'abord" 
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+            </div>
+            <SignatureForm onSignatureAdded={handleSignatureAdded} />
+          </div>
+
+          {/* Partage social */}
+          <div>
+            <SocialShare />
+          </div>
+        </div>
+
+        {/* Liste des signataires */}
+        <div className="mt-8">
+          <SignatureList maxItems={10} />
+        </div>
+      </div>
+
+      {/* Footer avec image intégrée */}
+      <footer className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <div className="flex flex-col md:flex-row items-center justify-center mb-6">
+              <div className="mb-4 md:mb-0 md:mr-6">
+                <Logo size="small" className="" />
+              </div>
+              <div className="text-center md:text-left">
+                <p className="text-emerald-200 mb-2">
+                  Pour la dignité et la souveraineté du Gabon
+                </p>
+                <div className="flex flex-wrap justify-center md:justify-start gap-4 text-yellow-400">
+                  {PETITION_CONTENT.hashtags.map((hashtag, index) => (
+                    <span key={index} className="font-semibold">{hashtag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Image finale en bas */}
+            <div className="mb-6">
+              <img 
+                src="/images/Image_3.png" 
+                alt="Logo final Gabon d'abord" 
+                className="w-24 h-24 object-contain mx-auto opacity-80"
+              />
+            </div>
+            
+            <div className="pt-6 border-t border-emerald-700">
+              <p className="text-emerald-300 text-sm">
+                &copy; 2025 Gabon d'abord - Tous droits réservés
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App
