@@ -97,6 +97,10 @@ function App() {
               </blockquote>
               <cite className="text-yellow-300 font-bold text-lg">
                 — {PETITION_CONTENT.citations.africaine.auteur}
+                <br />
+                <span className="text-yellow-200 text-sm font-normal italic">
+                  {PETITION_CONTENT.citations.africaine.source}
+                </span>
               </cite>
             </div>
           </div>
@@ -234,16 +238,24 @@ function App() {
         </div>
       </div>
 
-      {/* Footer avec image intégrée */}
+      {/* Footer avec devise, contacts et message Gabondabord */}
       <footer className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white mt-16">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-12">
           <div className="text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center mb-6">
-              <div className="mb-4 md:mb-0 md:mr-6">
-                <Logo size="small" className="" />
+            {/* Devise du Gabon */}
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-yellow-400 mb-2">
+                UNION - TRAVAIL - JUSTICE
+              </h2>
+              <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center mb-8">
+              <div className="mb-6 md:mb-0 md:mr-8">
+                <Logo size="medium" className="" />
               </div>
               <div className="text-center md:text-left">
-                <p className="text-emerald-200 mb-2">
+                <p className="text-emerald-200 mb-3 text-lg">
                   Pour la dignité et la souveraineté du Gabon
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-yellow-400">
@@ -254,7 +266,33 @@ function App() {
               </div>
             </div>
             
-            {/* Image finale en bas */}
+            {/* Message Gabondabord */}
+            <div className="bg-emerald-700 rounded-lg p-6 mb-8 max-w-4xl mx-auto">
+              <p className="text-yellow-100 text-lg leading-relaxed italic">
+                "Gabondabord, c'est toi, c'est moi, c'est vous, c'est nous. Unis dans la concorde comme un seul Homme, 
+                pour défendre notre Majestueux Gabon. Défendre les intérêts de la nation par le peuple et pour le peuple. 
+                Nous n'avons pas choisi d'être Gabonais, nous avons juste eu de la chance."
+              </p>
+            </div>
+            
+            {/* Contacts */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-md mx-auto">
+              <div className="flex items-center justify-center space-x-2">
+                <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+                <span className="text-emerald-200">GitHub : Gabondabord2025</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span className="text-emerald-200">Email : Gabondabord2025@gmail.com</span>
+              </div>
+            </div>
+            
+            {/* Image finale */}
             <div className="mb-6">
               <img 
                 src="/images/Image_3.png" 

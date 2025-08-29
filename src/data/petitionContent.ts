@@ -61,8 +61,9 @@ Nous, citoyennes et citoyens gabonais, sommes aujourd'hui contraints de réagir 
       auteur: "Proverbe Romain"
     },
     africaine: {
-      texte: "L'impérialisme est un système d'exploitation qui ne peut survivre que par la violence et la guerre. Un peuple qui s'arme mentalement est un peuple invincible.",
-      auteur: "Thomas Sankara"
+      texte: "Le patriotisme, la paix et l'unité nationale sont désormais notre force. Nous devons montrer qu'au-delà de nos différences, nous sommes avant tout des fils et filles du Gabon.",
+      auteur: "Président Brice Clotaire Oligui Nguema",
+      source: "Discours du 65e anniversaire de l'indépendance"
     },
     antiPassivite: {
       texte: "Le silence face à l'injustice fait de toi un complice de l'oppresseur. Celui qui se tait quand sa nation est humiliée trahit la mémoire de ses ancêtres.",
