@@ -20,7 +20,7 @@ Site web professionnel de pétition pour le boycott des marchandises béninoises
 
 ## 🎨 Design
 - **Couleurs**: Vert foncé (#1B5E20) et doré (#FFD700)
-- **Logo**: Masque traditionnel gabonais avec balances de justice
+- **Logo**: Masque traditionnel gabonais avec balances de justice 
 - **Entête**: Fond blanc comme demandé
 - **Images**: Toutes les 4 images d'identité graphique intégrées harmonieusement
 
@@ -28,7 +28,7 @@ Site web professionnel de pétition pour le boycott des marchandises béninoises
 - **Frontend**: React 18 + TypeScript + Vite
 - **Styling**: TailwindCSS
 - **Backend**: Supabase (base de données, authentification)
-- **Déploiement**: MiniMax Space
+- **Déploiement**: Vercel
 
 ## 📦 Structure du projet
 ```
@@ -54,23 +54,12 @@ public/images/          # Assets graphiques
 └── Image_5.jpeg        # Interface complète
 ```
 
-## 🚀 Instructions pour GitHub
-
-Pour pousser le code vers le repository GitHub `gabondabord2025`:
-
-```bash
-# Dans le répertoire gabon-petition/
-git remote set-url origin https://github.com/gabondabord2025-sudo/gabondabord2025.git
-git push -u origin main
-```
-
-**Note**: Vous devrez vous authentifier avec vos identifiants GitHub.
 
 ## 📞 Support
 - **Username GitHub**: `gabondabord2025-sudo`
 - **Repository**: `gabondabord2025`
 - **Hashtags**: #GabonDabord #BoycottIngratitude #DigniteGabonaise
-
+- **Email de signalement**: gabondabord2025@gmail.com
 ---
 
 **Développé par MiniMax Agent - Toutes les corrections ont été appliquées conformément aux exigences.**
