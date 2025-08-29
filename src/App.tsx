@@ -44,6 +44,15 @@ function App() {
             <p className="text-emerald-100 text-lg leading-relaxed whitespace-pre-line">
               {PETITION_CONTENT.introduction}
             </p>
+            
+            {/* Message symbolique du 30 août */}
+            <div className="mt-6 p-4 bg-emerald-600 bg-opacity-20 rounded-lg border border-emerald-400">
+              <p className="text-yellow-200 text-base italic text-center">
+                <strong>Le 30 août 2025 est notre fête de la Libération de notre peuple, 2 ans déjà.</strong> 
+                Elle semble coïncider avec cette pétition mais cela n'est pas un hasard mais un <strong>symbolisme fort</strong>, 
+                pour réaffirmer notre liberté et souveraineté.
+              </p>
+            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -232,97 +241,82 @@ function App() {
           </div>
         </div>
 
+        {/* Section Chiffres Clés - Version compacte */}
+        <div className="mt-12 mb-8">
+          <div className="bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-8 border border-red-200">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-red-800 mb-2">
+                CHIFFRES CLÉS SUR L'IMMIGRATION
+              </h2>
+              <div className="w-20 h-0.5 bg-red-600 mx-auto"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
+              {/* Première image - Classement Afrique */}
+              <div className="bg-white rounded-lg shadow-md p-4 border border-red-200">
+                <img 
+                  src="/images/Image_20.png" 
+                  alt="Classement des pays africains par taux d'immigration" 
+                  className="w-full h-auto rounded-md mb-3 shadow-sm"
+                />
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-red-800 mb-2">
+                    LE GABON : N°1 EN AFRIQUE
+                  </h3>
+                  <p className="text-red-700 text-sm">
+                    <strong>18,72% d'immigrants</strong> - Le taux le plus élevé d'Afrique
+                  </p>
+                </div>
+              </div>
+
+              {/* Deuxième image - Carte des flux */}
+              <div className="bg-white rounded-lg shadow-md p-4 border border-red-200">
+                <img 
+                  src="/images/Image_19.png" 
+                  alt="Flux migratoires vers le Gabon depuis les pays voisins" 
+                  className="w-full h-auto rounded-md mb-3 shadow-sm"
+                />
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-red-800 mb-2">
+                    FLUX MIGRATOIRES VERS LE GABON
+                  </h3>
+                  <p className="text-red-700 text-sm">
+                    Le <strong>Cameroun (20%)</strong> et le <strong>Bénin</strong> parmi les principaux pays d'origine
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Message ironique compact */}
+            <div className="bg-gradient-to-r from-red-800 to-red-900 rounded-lg p-6 text-white">
+              <div className="text-center mb-4">
+                <h3 className="text-xl font-bold text-yellow-300 mb-2">
+                  ⚖️ LA VÉRITÉ DES CHIFFRES
+                </h3>
+              </div>
+              
+              <div className="space-y-3 text-sm leading-relaxed">
+                <p className="text-red-100">
+                  <strong className="text-yellow-300">Voici le pays que vous (Certains Africains et Panafricanistes) avez osé traiter de xénophobes</strong>, 
+                  recevant le <strong>plus grand taux de migrants d'Afrique</strong>. Et ceux qui ont piétiné notre souveraineté 
+                  font partie de ceux qui comptent le <strong className="text-yellow-300">plus grand nombre de migrants</strong> dans notre Pays. 
+                  Cela est <strong className="text-yellow-300">INACCEPTABLE !</strong>
+                </p>
+                
+                <p className="text-yellow-200 text-center font-semibold">
+                  Le peuple GABONAIS réclame <strong>JUSTICE</strong> avec des <strong>LOIS FORTES ET PROHIBITIVES</strong> 
+                  contre ce mépris. Le <strong>GABON est souverain</strong> et ne sera plus jamais passif !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Liste des signataires */}
         <div className="mt-8">
           <SignatureList maxItems={10} />
         </div>
       </div>
-
-      {/* Section Chiffres Clés */}
-      <section className="bg-gradient-to-r from-red-50 via-white to-red-50 py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-red-800 mb-6">
-              CHIFFRES CLÉS SUR L'IMMIGRATION
-            </h2>
-            <div className="w-32 h-1 bg-red-600 mx-auto mb-8"></div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-            {/* Première image - Classement Afrique */}
-            <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-red-200">
-              <img 
-                src="/images/Image_20.png" 
-                alt="Classement des pays africains par taux d'immigration" 
-                className="w-full h-auto rounded-lg mb-6 shadow-md"
-              />
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-red-800 mb-3">
-                  🥇 LE GABON : N°1 EN AFRIQUE
-                </h3>
-                <p className="text-red-700 text-lg leading-relaxed">
-                  <strong>18,72% d'immigrants</strong> - Le taux le plus élevé d'Afrique ! 
-                  Près d'1 personne sur 5 au Gabon est immigrante, dépassant largement 
-                  tous les autres pays africains.
-                </p>
-              </div>
-            </div>
-
-            {/* Deuxième image - Carte des flux */}
-            <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-red-200">
-              <img 
-                src="/images/Image_19.png" 
-                alt="Flux migratoires vers le Gabon depuis les pays voisins" 
-                className="w-full h-auto rounded-lg mb-6 shadow-md"
-              />
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-red-800 mb-3">
-                  📊 FLUX MIGRATOIRES VERS LE GABON
-                </h3>
-                <p className="text-red-700 text-lg leading-relaxed">
-                  Le <strong>Cameroun (20%)</strong> et le <strong>Bénin</strong> figurent parmi 
-                  les principaux pays d'origine des migrants au Gabon, montrant l'ampleur 
-                  de notre générosité d'accueil.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Message ironique */}
-          <div className="mt-12 max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-red-800 to-red-900 rounded-xl shadow-2xl p-8 text-white">
-              <div className="text-center mb-6">
-                <h3 className="text-3xl font-bold text-yellow-300 mb-4">
-                  ⚖️ LA VÉRITÉ DES CHIFFRES
-                </h3>
-              </div>
-              
-              <div className="space-y-6 text-lg leading-relaxed">
-                <p className="text-red-100">
-                  <strong className="text-yellow-300">Voici le pays que vous (Certains Africains et Panafricanistes) avez osé traiter de xénophobes</strong>, 
-                  recevant le <strong>plus grand taux de migrants d'Afrique et du monde</strong>, par rapport au seuil de sa population. 
-                  Et ceux qui ont décidés de piétiner notre souveraineté par une cabale calomnieuse à l'égard de notre chère et majestueuse patrie le GABON, 
-                  font parties de ceux qui comptent le <strong>plus grand nombre de migrants dans notre Pays</strong> et cela est <strong className="text-yellow-300">INACCEPTABLE !</strong>
-                </p>
-                
-                <div className="bg-red-700 rounded-lg p-6 border-l-4 border-yellow-400">
-                  <p className="text-yellow-100 font-semibold">
-                    Le peuple GABONAIS réclame <strong className="text-yellow-300">JUSTICE</strong> avec l'entrée en VIGUEUR DE <strong>LOIS FORTES ET PROHIBITIVES</strong> 
-                    à l'égard de ce mépris sans commune mesure, de ces peuples que nous avons toujours considérés, nous, Gabonais au GABON & ailleurs, 
-                    comme des peuples Africains frères. Le <strong className="text-yellow-300">GABON est souverain</strong> et doit prendre ses responsabilités, 
-                    il en va de notre honneur.
-                  </p>
-                </div>
-                
-                <p className="text-center text-yellow-200 text-xl font-bold italic">
-                  Le peuple GABONAIS ne sera plus jamais passif et regarde attentivement vers ses autorités 
-                  tout en lançant un <strong className="text-yellow-300">Boycott de dignité nationale</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer avec devise, contacts et message Gabondabord */}
       <footer className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white mt-16">

@@ -1,5 +1,5 @@
 export const PETITION_CONTENT = {
-  title: "Pétition : 'Gabon d'abord !' - Boycott National des marchandises béninoises et camerounaises en réponse à l'ingratitude, des insultes envers notre nation et nos autorités dont le CHEF DE L'ETAT , PRESIDENT DE LA REPUBLIQUE S.E OLIGUI NGUEMA BRICE CLOTAIRE .",
+  title: "Pétition : 'Gabon d'abord !' - Boycott des marchandises et commerces béninois et camerounais en réponse à l'ingratitude, les insultes envers notre nation et nos autorités dont le CHEF DE L'ETAT, PRESIDENT DE LA REPUBLIQUE, S.E OLIGUI NGUEMA Brice Clotaire.",
   
   introduction: `À toutes les sœurs et frères gabonais,
 À toutes les consciences patriotiques,
